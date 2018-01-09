@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<!-- Header //-->
+<header id="header">
+	<a routerLink="/list" style="float: left;"> <i class="fa fa-arrow-left"></i> Listeye Geri Dön </a>
+</header>
+<!--// Header -->
+<form id="formNewMovie" ngNativeValidate name="formNewMovie" #movieData="ngForm" (ngSubmit) = "newItem(movieData.value)">
+	<div class="radios">
+		<label for="movie"> <input required type="radio" ngModel id="type" name="type" value="movie"> Film</label>
+		<label for="series"> <input required type="radio" ngModel id="type" name="type" value="series"> Dizi</label>
+	</div>
+    <input ngModel required name="name" [value]="NameValue" placeholder="Film / Dizi Adı" class="input">
+	<input ngModel required type="number" [value]="RateValue" max="10" name="rate" placeholder="Puan" class="input">
+    <input type="submit" value="KAYDET">
+</form>

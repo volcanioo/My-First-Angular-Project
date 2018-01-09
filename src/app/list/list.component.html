@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Header //-->
+<header id="header">
+	<select [(ngModel)] = "listKind" multiple="multiple">
+		<option value="movie" selected="true">Film</option>
+		<option value="series">Dizi</option>
+	</select>
+	<select name="siralama" id="siralama">
+		<option value="-1">Sıralama Tipini Seçin</option>
+		<option value="azalan">Puana Göre Azalan</option>
+		<option value="artan">Puana Göre Artan</option>
+	</select>
+	<a routerLink="/new"> + YENİ KAYIT </a>
+</header>
+<!--// Header -->
+<!-- List Of Contents //-->
+<div id="list-of-contents">
+	<ul *ngFor = "let item of movies; let i = index">
+		<li *ngIf="listKind==item.type||listKind=='movie,series'">
+			<strong>{{item.movie}} <i class="fa fa-trash" (click)="removeMovie(item.id, item.movie)"></i> </strong>
+			<i class="fa fa-star"><b>{{item.rate}}</b></i>
+			<div>
+				<i class="fa fa-arrow-up" (click)="upRate(item)"></i>
+				<i class="fa fa-arrow-down" (click)="downRate(item)"></i>
+			</div>
+		</li>
+	</ul>
+</div>
+<!--// List Of Contents -->

@@ -1,0 +1,28 @@
+{
+  "movies": [
+    {
+      "id": 7,
+      "movie": "Kolpaçino Bomba",
+      "rate": 10,
+      "type": "movie"
+    },
+    {
+      "id": 8,
+      "movie": "The Facebook",
+      "rate": "8",
+      "type": "series"
+    },
+    {
+      "movie": "Sherlock",
+      "rate": "9",
+      "type": "series",
+      "id": 14
+    },
+    {
+      "movie": "Mehmet Salih Deveci",
+      "rate": 4,
+      "type": "movie",
+      "id": 15
+    }
+  ]
+}
